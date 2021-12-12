@@ -1,0 +1,41 @@
+.container-fluid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form > .btn {
+    margin-top: 20px;
+    border-radius: 0;
+    border-style: solid;
+    background: transparent;
+    font-size: 18px;
+}
+
+.form > .btn:hover {
+    cursor: pointer;
+    background-color: #f4f4f4;
+}
+
+.results {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pos {
+    text-transform: uppercase;
+    text-decoration: underline green;
+}
+
+.neg {
+    text-transform: uppercase;
+    text-decoration: underline red;
+}

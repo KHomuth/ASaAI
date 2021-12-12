@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prediction Results</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="Kevin Homuth">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="results">
+        {% if prediction==1 %}
+            <p>Prediction: <span class="pos">positive</span></p>
+        {% elif prediction==0 %}
+            <p>Prediction: <span class="neg">negative</span></p>
+        {% endif %}
+    </div>
+</body>
+</html>
