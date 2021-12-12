@@ -28,6 +28,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .pos {
@@ -38,4 +39,10 @@
 .neg {
     text-transform: uppercase;
     text-decoration: underline red;
+}
+
+.back {
+    position: absolute;
+    left: 15px;
+    top: 15px
 }
