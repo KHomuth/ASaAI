@@ -1,12 +1,20 @@
 # ASaAI
 
-pip3 install pandas /n
-pip3 install numpy /n
-pip3 install scikit-learn /n
-pip3 install matplotlib /n
-pip3 install nltk /n
-pip3 install seaborn /n
-pip3 install flask /n
-pip3 install notebook /n 
+pip3 install pandas
+
+pip3 install numpy
+
+pip3 install scikit-learn
+
+pip3 install matplotlib
+
+pip3 install nltk
+
+pip3 install seaborn
+
+pip3 install flask
+
+pip3 install notebook
+
 
 python3 app.py -> to run local
