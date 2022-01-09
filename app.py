@@ -8,8 +8,7 @@ from nltk.stem.porter import PorterStemmer
 import pickle
 
 ###Loading model and cv
-cv = pickle.load(open('cv.pkl','rb'))
-model = pickle.load(open('review.pkl','rb'))
+cv = pickle.load(open('sentiment_analysis/cv.pkl','rb'))
 
 app = Flask(__name__)
 
@@ -20,6 +19,8 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     if request.method=='POST':
+        new_model = request.form['algorithm']
+        model = pickle.load(open('sentiment_analysis/' + new_model + '_review.pkl','rb'))
         new_review = request.form['review']
         new_review = re.sub('[^a-zA-Z]', ' ', new_review)
         new_review = new_review.lower()
@@ -35,4 +36,4 @@ def predict():
         return render_template('result.html',prediction=pred)
 
 if __name__ == "__main__":
-    app.run(debug=True)    
+    app.run(debug=True)
