@@ -1,34 +1,156 @@
+:root {
+    --primary-color: #a3c2eb;
+    --accent-color: #163e72;
+
+    --border: #393939;
+    --arrow: var(--border);
+
+    --button: rgb(115, 139, 170);
+    --button-hover: rgb(101, 124, 155);
+
+}
+
+/************************ Styling index.html********************************/
+h1 {
+    text-align: center;
+}
 .container-fluid {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 1.25em;
 }
 
+/*Form stylen*/
 .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 0.25em;
+    padding: 1em 2em 1em 2em;
 }
 
 .form > .btn {
-    margin-top: 20px;
-    border-radius: 0;
-    border-style: solid;
     background: transparent;
-    font-size: 18px;
+    font-size: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    background-color: var(--button);
 }
 
 .form > .btn:hover {
     cursor: pointer;
-    background-color: #f4f4f4;
+    background-color: var(--button-hover);
 }
 
-.results {
+/*Select stylen*/
+.select-wrapper{
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background: white;
+    margin-bottom: 1em;
+}
+
+.select-wrapper::after{
+    content: "";
+    justify-self: end;
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select,
+.select-wrapper::after{
+    grid-area: select;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    z-index: 1;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select option {
+    color: #666;
+    background-color: white;
+}
+
+select:focus::-ms-value {
+    background-color: transparent;
+}
+
+/*Label stylen*/
+label{
+    margin-bottom: 0.25em;
+}
+
+/*Input stylen*/
+input{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    background: white;
+    margin-bottom: 1em;
+}
+
+/************************** Styling result.html****************************/
+.results{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    align-items: center;
+    margin-top: 3em;
+    font-family: Arial;
+    font-size: 1.25em;
+}
+
+.results > p{
+    background-color: var(--primary-color);
+    border-radius: 0.25em;
+    padding: 1em;
 }
 
 .pos {
@@ -43,6 +165,8 @@
 
 .back {
     position: absolute;
-    left: 15px;
-    top: 15px
+    left: 1em;
+    top: 1em;
+    font-family: Arial;
+    font-size: 1.25em;
 }

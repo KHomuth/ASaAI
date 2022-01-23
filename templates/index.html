@@ -12,15 +12,19 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <h1>Sentiment Analysis</h1>
     <div class="container-fluid">
         <form class="form" action="{{ url_for('predict') }}" method="POST">
-            <select id="select" name="algorithm">
-                <option value="dtc">Decision Tree</option>
-                <option value="rfc">Random Forest</option>
-                <option value="nb">Naive Bayes</option>
-            </select>
             <label for="select">Choose algorithm</label>
-            <input type="text" name="review" placeholder="Enter Your Review Here..." required >
+            <div class="select-wrapper">
+                <select id="select" name="algorithm">
+                    <option value="dtc">Decision Tree</option>
+                    <option value="rfc">Random Forest</option>
+                    <option value="nb">Naive Bayes</option>
+                </select>
+            </div>
+            <label for="review">Enter review</label>
+            <input type="text" id="review" name="review" placeholder="Enter Your Review Here..." required >
             <button type="submit" class="btn" value="Predict">Submit</button>
         </form>
     </div>
