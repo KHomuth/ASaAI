@@ -16,5 +16,7 @@ pip3 install flask
 
 pip3 install notebook
 
+pip install wordcloud
+
 
 python3 app.py -> to run local
