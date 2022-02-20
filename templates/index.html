@@ -20,13 +20,34 @@
                     <option value="dtc">Decision Tree</option>
                     <option value="rfc">Random Forest</option>
                     <option value="nb">Naive Bayes</option>
-                    <option value="lr">Linear Regression</option>
+                    <option value="lr">Logistic Regression</option>
+                    <option value="all">all Algorithms</option>
                 </select>
             </div>
             <label for="review">Enter review</label>
             <input type="text" id="review" name="review" placeholder="Enter Your Review Here..." required >
             <button type="submit" class="btn" value="Predict">Submit</button>
         </form>
+        <div class="dataset-info">
+            <h3>Dataset informations</h3>
+            <p>
+                Dataset used: <a href="https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews" target="_blank">imdb Dataset of 50k Movie Reviews</a>
+            </p>
+            <div class="dataset-info__element">
+                <h4>Review distribution</h4>
+                <figure>
+                    <img class="img-fluid" src="{{ url_for('static', filename='sentiment.png') }}">
+                    <figcaption>25k positive reviews, 25k negative reviews</figcaption>
+                </figure>
+            </div>
+            <div class="dataset-info__element">
+                <h4>Visualization as Wordcloud</h4>
+                <figure>
+                    <img class="img-fluid" src="{{ url_for('static', filename='wordcloud.png') }}">
+                    <figcaption>Wordcloud</figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
 </body>
 </html>

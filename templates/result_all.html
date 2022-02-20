@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prediction Results</title>
+  <meta name="description" content="ASaAI Sentiment Analysis tutorial from https://medium.com/pythoneers/sentiment-analysis-web-app-using-nltk-and-heroku-96ccd37c44ef">
+  <meta name="author" content="Kevin Homuth">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <a href="/" class="back">Home</a>
+    <div class="results">
+        <div class="result">
+            <p>
+                Your review: {{review}} <br><br>
+                Your review stemmed and without stopwords: {{review_result}}
+            </p>
+        </div>
+        <div class="result">
+            <p>Based on the current prediction via Decision Tree, <br>
+                with an accuracy of  &#8776; <strong>71%</strong>, <br>
+                the comment is:
+                {% if prediction_dtc==1 %}
+                    <span class="pos">positive</span>
+                {% elif prediction_dtc==0 %}
+                    <span class="neg">negative</span>
+                {% endif %}
+                <br>
+            </p>
+            <figure>
+                <img class="img-fluid" src="{{ url_for('static', filename='dtc_cm.png') }}">
+                <figcaption>Confusion Matrix</figcaption>
+            </figure>    
+        </div>
+        <div class="result">
+            <p>Based on the current prediction via Random Forest, <br>
+                with an accuracy of  &#8776; <strong>84%</strong>, <br>
+                the comment is:
+                {% if prediction_rfc==1 %}
+                    <span class="pos">positive</span>
+                {% elif prediction_rfc==0 %}
+                    <span class="neg">negative</span>
+                {% endif %}
+                <br>
+            </p>
+            <figure>
+                <img class="img-fluid" src="{{ url_for('static', filename='rfc_cm.png') }}">
+                <figcaption>Confusion Matrix</figcaption>
+            </figure>    
+        </div>
+        <div class="result">
+            <p>Based on the current prediction via Naive Bayes, <br>
+                with an accuracy of  &#8776; <strong>83%</strong>, <br>
+                the comment is:
+                {% if prediction_nb==1 %}
+                    <span class="pos">positive</span>
+                {% elif prediction_nb==0 %}
+                    <span class="neg">negative</span>
+                {% endif %}
+                <br>
+            </p>
+            <figure>
+                <img class="img-fluid" src="{{ url_for('static', filename='nb_cm.png') }}">
+                <figcaption>Confusion Matrix</figcaption>
+            </figure>    
+        </div>
+        <div class="result">
+            <p>Based on the current prediction via Logistic Regression, <br>
+                with an accuracy of  &#8776; <strong>87%</strong>, <br>
+                the comment is:
+                {% if prediction_lr==1 %}
+                    <span class="pos">positive</span>
+                {% elif prediction_lr==0 %}
+                    <span class="neg">negative</span>
+                {% endif %}
+                <br>
+            </p>
+            <figure>
+                <img class="img-fluid" src="{{ url_for('static', filename='lr_cm.png') }}">
+                <figcaption>Confusion Matrix</figcaption>
+            </figure>    
+        </div>
+    </div>
+</body>
+</html>
