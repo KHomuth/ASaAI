@@ -16,7 +16,9 @@ pip3 install flask
 
 pip3 install notebook
 
-pip install wordcloud
+pip3 install wordcloud
+
+Run all .ipynb Files to make sure everything needed is compilated
 
 
-python3 app.py -> to run local
+python3 app.py -> to run app local
