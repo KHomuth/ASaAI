@@ -18,7 +18,7 @@ pip3 install notebook
 
 pip3 install wordcloud
 
-Run all .ipynb Files to make sure everything needed is compilated
+Run all .ipynb Files to make sure everything needed is compiled
 
 
 python3 app.py -> to run app local
